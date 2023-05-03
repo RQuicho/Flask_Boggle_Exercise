@@ -14,6 +14,10 @@
   {% endfor %}
 </table>
 
-<!-- {{board}} -->
+<form action="/" method="POST">
+  <label for="guess">Your Guess: </label>
+  <input type="text" name="guess" id="guess">
+  <button type="submit">Submit</button>
+</form>
 
 {% endblock %}
