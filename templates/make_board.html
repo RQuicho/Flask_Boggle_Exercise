@@ -5,19 +5,21 @@
 {% block content %}
 
 <table>
-  {% for row in board %}
-  <tr>
-    {% for letter in row %}
-    <td>{{letter}}</td>
+  <tbody>
+    {% for row in board %}
+    <tr>
+      {% for letter in row %}
+      <td>{{letter}}</td>
+      {% endfor %}
+    </tr>
     {% endfor %}
-  </tr>
-  {% endfor %}
+  </tbody>
 </table>
 
-<form action="/" method="POST">
+<form method="POST">
   <label for="guess">Your Guess: </label>
   <input type="text" name="guess" id="guess">
-  <button type="submit">Submit</button>
+  <button>Submit</button>
 </form>
 
 {% endblock %}
