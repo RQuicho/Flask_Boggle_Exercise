@@ -31,20 +31,59 @@
 //     });
 // });
 
-const form = document.querySelector('form');
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	let inputValue = document.querySelector('#guess').value;
 
-	axios.post('/', {
-		guess: inputValue,
-	})
-	.then((res) => {
-		console.log(res);
-	})
-	.catch((err) => {
-		console.log(err);
-	});
+const inputValue = document.querySelector('#guess').value;
+console.log(inputValue);
+
+axios.post('/check-word', {
+	guess: inputValue
+})
+.then((res) => {
+	console.log(res);
+	console.log(res.data.guessed_words);
+})
+.catch((err) => {
+	console.log(err);
 });
+
+// axios({
+// 	method: 'post',
+// 	url: '/check-word',
+// 	data: {guess: inputValue}
+// });
+
+// const form = document.querySelector('form');
+// form.addEventListener('submit', (e) => {
+// 	e.preventDefault();
+// 	let inputValue = document.querySelector('#guess').value;
+
+// 	axios.post('/check-word', {
+// 		guess: inputValue,
+// 	})
+// 	.then((res) => {
+// 		console.log(res);
+// 	})
+// 	.catch((err) => {
+// 		console.log(err);
+// 	});
+// });
+
+
+// const input_type = document.getElementById("name");
+// console.log(input_type);
+// const getPlayerGuess =  (e) =>{
+// e.prevent()
+// console.log("i came here")
+
+// try {
+//    const response =  axios.post('http://127.0.0.1:5000/check-word', {
+//       // Data to be sent to the server
+//       name: input_type
+//    });
+//    console.log(response.data);
+// } catch (error) {
+//    console.error(error);
+// }
+// }
 
 
